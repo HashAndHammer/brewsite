@@ -6,7 +6,7 @@ def test_home():
 
     response = client.get("/")
     assert response.status_code == 200
-    assert b"Welcome to our brewsite page" in response.data
+    assert b"Welcome to Brewsite" in response.data
 
     response = client.get("/breweries")
     assert response.status_code == 200

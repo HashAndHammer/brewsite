@@ -1,6 +1,35 @@
 {% extends "base.html" %}
 
 {% block main %}
-<p>Welcome to our brewsite page</p>
-<p>{{ user }}</p>
+<div class="container mt-4">
+
+    <div class="text-center mb-4">
+        <h1>Welcome to Brewsite</h1>
+        <p>{{ user }}</p>
+        <p>Explore breweries, beer styles, and craft beer from around the world.</p>
+    </div>
+
+    <div class="row g-4">
+
+        <div class="col-md-4">
+            <img src="{{ url_for('static', filename='images/Cold Beer.png') }}"
+                 class="img-fluid rounded"
+                 alt="Cold beer">
+        </div>
+
+        <div class="col-md-4">
+            <img src="{{ url_for('static', filename='images/BeersAroundTheWorld.png') }}"
+                 class="img-fluid rounded"
+                 alt="Beers around the world">
+        </div>
+
+        <div class="col-md-4">
+            <img src="{{ url_for('static', filename='images/BeerCrafting.png') }}"
+                 class="img-fluid rounded"
+                 alt="Craft brewery with copper brewing equipment">
+        </div>
+
+    </div>
+
+</div>
 {% endblock main %}
