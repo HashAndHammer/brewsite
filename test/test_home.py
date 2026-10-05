@@ -1,5 +1,18 @@
-from app.brewsite import hello_world
+from app.brewsite import app
 
 
 def test_home():
-    assert "Hello" in hello_world()
+    client = app.test_client()
+
+    response = client.get("/")
+    assert response.status_code == 200
+    assert b"Welcome to our brewsite page" in response.data
+
+    response = client.get("/breweries")
+    assert response.status_code == 200
+
+    response = client.get("/beer_types")
+    assert response.status_code == 200
+
+    response = client.get("/about")
+    assert response.status_code == 200
