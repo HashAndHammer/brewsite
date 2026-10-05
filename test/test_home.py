@@ -1,5 +1,4 @@
-from app.brewsite import hello_world
-
+from app.brewsite import home
 
 def test_home():
-    assert "Hello" in hello_world()
+    assert "Hello" in home()
