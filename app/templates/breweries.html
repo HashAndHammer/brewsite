@@ -1,5 +1,21 @@
 {% extends "base.html" %}
 
 {% block main %}
-<p>Welcome to Breweries</p>
+<div class="container mt-4">
+    <h1>Breweries</h1>
+
+    {% for brewery in breweries %}
+    <div class="card mb-3">
+        <div class="card-body">
+            <h5 class="card-title">{{ brewery["name"] }}</h5>
+            <p class="card-text">
+                Brewery Type: {{ brewery["brewery_type"] }}<br>
+                City: {{ brewery["city"] }}<br>
+                State: {{ brewery["state"] }}<br>
+                Country: {{ brewery["country"] }}
+            </p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
 {% endblock main %}
